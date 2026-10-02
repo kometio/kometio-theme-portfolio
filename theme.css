@@ -1,0 +1,65 @@
+/**
+ * "portfolio" — an editorial theme for studios, designers and
+ * photographers: warm paper, near-black ink, one terracotta accent,
+ * headings set in a display serif, and room around everything.
+ *
+ * Tokens only (docs/creating-a-theme.md, "The escalation ladder"). Core
+ * reads this file's `:root` custom properties and nothing else, so every
+ * choice below is a token.
+ */
+:root {
+  /* Type. Instrument Sans for text, Fraunces for headings — both files of
+     this theme (fonts.css). A display serif reads best a little lighter
+     and tighter than the bold sans core defaults to. */
+  --font-sans-value:
+    'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --kometio-heading-font: 'Fraunces Variable', ui-serif, Georgia, serif;
+  --kometio-heading-weight: 500;
+  --kometio-h1-weight: 400;
+  --kometio-heading-tracking: -0.02em;
+  --kometio-heading-leading: 1.08;
+  --kometio-h1-size: clamp(2.5rem, 1.6rem + 4.2vw, 5rem);
+  --kometio-h2-size: clamp(1.875rem, 1.4rem + 2vw, 3rem);
+  --kometio-h3-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --kometio-h4-size: 1.25rem;
+  --kometio-h5-size: 1.0625rem;
+  --kometio-h6-size: 0.9375rem;
+
+  /* Colour. Paper and ink rather than white and black; the accent is
+     for links and the one action a page asks for. */
+  --background: oklch(0.975 0.008 85);
+  --foreground: oklch(0.22 0.012 60);
+  --primary: oklch(0.52 0.14 40);
+  --primary-foreground: oklch(0.985 0.005 85);
+  --secondary: oklch(0.935 0.014 80);
+  --secondary-foreground: oklch(0.22 0.012 60);
+  --muted: oklch(0.935 0.014 80);
+  --muted-foreground: oklch(0.45 0.018 60);
+  --border: oklch(0.87 0.014 75);
+  --link: var(--primary);
+  --link-hover: var(--foreground);
+
+  /* Shape and space. Nearly square corners, wider columns, generous
+     gutters — a portfolio is mostly pictures. */
+  --radius: 0.25rem;
+  --kometio-content-width: 72rem;
+  --kometio-content-width-wide: 90rem;
+  --kometio-content-gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+
+  /* Shadows, warm and soft: ink at low alpha, not neutral black. */
+  --shadow-xs: 0 1px 2px 0 oklch(0.22 0.012 60 / 0.05);
+  --shadow-sm:
+    0 1px 3px 0 oklch(0.22 0.012 60 / 0.08),
+    0 1px 2px -1px oklch(0.22 0.012 60 / 0.06);
+  --shadow-md:
+    0 6px 12px -4px oklch(0.22 0.012 60 / 0.1),
+    0 2px 4px -2px oklch(0.22 0.012 60 / 0.06);
+  --shadow-lg:
+    0 16px 32px -12px oklch(0.22 0.012 60 / 0.16),
+    0 4px 8px -4px oklch(0.22 0.012 60 / 0.06);
+  --shadow-xl:
+    0 28px 48px -16px oklch(0.22 0.012 60 / 0.2),
+    0 8px 16px -8px oklch(0.22 0.012 60 / 0.08);
+  --shadow-2xl: 0 40px 80px -24px oklch(0.22 0.012 60 / 0.28);
+  --shadow-inner: inset 0 2px 4px 0 oklch(0.22 0.012 60 / 0.06);
+}

@@ -1,0 +1,37 @@
+---
+import type { ThemeFooterProps } from '@kometio/theme-runtime';
+
+/**
+ * The footer turns the page over: ink background, paper text. It does
+ * so by redefining the colour tokens on the footer alone, so every block
+ * inside it — links, buttons, social icons — follows without an override
+ * of its own.
+ */
+export type Props = ThemeFooterProps;
+
+const { class: className } = Astro.props;
+---
+
+<footer class:list={['portfolio-footer', className]}>
+	<slot />
+</footer>
+
+<style>
+	.portfolio-footer {
+		--background: oklch(0.22 0.012 60);
+		--foreground: oklch(0.95 0.01 85);
+		--primary: oklch(0.8 0.1 55);
+		--primary-foreground: oklch(0.22 0.012 60);
+		--secondary: oklch(0.3 0.012 60);
+		--secondary-foreground: oklch(0.95 0.01 85);
+		--muted: oklch(0.3 0.012 60);
+		--muted-foreground: oklch(0.78 0.012 75);
+		--border: oklch(0.38 0.012 60);
+		--link: var(--primary);
+		--link-hover: var(--foreground);
+
+		background: var(--background);
+		color: var(--foreground);
+		padding: clamp(3rem, 2rem + 4vw, 6rem) var(--kometio-content-gutter);
+	}
+</style>

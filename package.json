@@ -1,0 +1,10 @@
+{
+  "name": "kometio-theme-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An editorial theme for Kometio, built from its own repository.",
+  "dependencies": {
+    "@kometio/theme-runtime": "*"
+  }
+}

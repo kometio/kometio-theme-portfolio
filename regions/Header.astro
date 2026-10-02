@@ -1,0 +1,38 @@
+---
+import type { ThemeHeaderProps } from '@kometio/theme-runtime';
+
+/**
+ * A thin header on the paper itself, with a hairline under it. Sticky
+ * (the header editor's switch), it keeps the paper behind it translucent
+ * so the page shows through as it scrolls.
+ */
+type Props = ThemeHeaderProps;
+
+const { sticky, class: className } = Astro.props;
+---
+
+<header
+	class:list={[
+		'portfolio-header',
+		className,
+		{ 'portfolio-header--sticky': sticky },
+	]}
+>
+	<slot />
+</header>
+
+<style>
+	.portfolio-header {
+		border-bottom: 1px solid var(--border);
+		background: var(--background);
+		padding: 1.125rem var(--kometio-content-gutter);
+	}
+
+	.portfolio-header--sticky {
+		position: sticky;
+		top: 0;
+		z-index: 40;
+		background: color-mix(in oklch, var(--background) 86%, transparent);
+		backdrop-filter: blur(12px);
+	}
+</style>
